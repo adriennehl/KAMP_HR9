@@ -4,7 +4,9 @@
     "description": "An extension that keeps track of where you are on a page.",
     "version": "1",
     "browser_action": {
-        "default_popup":"popup.html"
+        "default_title": "Where was I?",
+        "default_popup":"popup.html",
+        "default_icon": "icon.png",
     },
     "permissions": ["activeTab"]
 }
