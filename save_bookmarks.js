@@ -13,10 +13,13 @@ function save_bookmark(event){
         'y_coord': event.clientY};
     document.getElementById('test').value = new_bookmark.x_coord;
     console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
+    document.getElementById("date").value = dt.toLocaleDateString();
+    document.getElementById("time").value = dt.toLocaleTimeString();
+    document.getElementById("y-position").value = new_bookmark.y_coord;
     // sent bookmark to local data
-    localStorage.setItem('new_bookmark', JSON.stringify(new_bookmark));
+    // localStorage.setItem('new_bookmark', JSON.stringify(new_bookmark));
     document.removeEventListener('dblclick', save_bookmark);
 }
 
 // localData =  JSON.parse(localStorage.getItem('title'));
-document.getElementById('add-button').addEventListener('click', add_bookmark);
+//document.getElementById('add-button').addEventListener('click', add_bookmark);

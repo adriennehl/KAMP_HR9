@@ -20,16 +20,18 @@
     </head>
     <body>
         <div style="position:absolute; top:2.5%; left:5%; width: 90%; height: 95%;background-color: rgb(255, 244, 227);">
-            <input type="hidden" value="DATE-TIME">
+            <input type="hidden" id="date" name="date">
+            <input type="hidden" id="time" name="time">
+            <input type="hidden" id="y-position" name="y-position">
             <table width="75%" align="center">
                 <tr>
                     <td colspan="3"><font color="blue" size="3">Add New Scrollmarker</font></td>
                 </tr>
                 <tr>
                     <td>URL:</td>
-                    <td colspan="2"><input type="url" id="url" name="URL" class="form.text" placeholder="Enter URL here"/ 
-                        value="default value"
-                    ></td>
+                    <td colspan="2">
+                        <input type="url" id="url" name="URL" class="form.text" placeholder="Enter URL here"
+                    /></td>
                 </tr>
                 <tr>
                     <td>Title:</td>
@@ -47,8 +49,8 @@
                 </tr>
                    
                 <tr>
-                    <td colspan="2"><input type="button" value="Place your bookmarker" id="add-button"/></td>
-                    <td><input type="submit" value="Add"/></td>
+                    <td colspan="2"><input type="button" value="Place your bookmarker" id="add-button" onclick="add_bookmark()"/></td>
+                    <td><input type="submit" value="Add" id="submit"/></td>
                 </tr>
             </table>
     </div>
