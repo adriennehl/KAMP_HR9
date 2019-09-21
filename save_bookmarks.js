@@ -13,6 +13,7 @@ function save_bookmark(event){
         'y_coord': event.clientY};
     document.getElementById('test').value = new_bookmark.x_coord;
     console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
+    var dt = new Date();
     document.getElementById("date").value = dt.toLocaleDateString();
     document.getElementById("time").value = dt.toLocaleTimeString();
     document.getElementById("y-position").value = new_bookmark.y_coord;
