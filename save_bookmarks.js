@@ -3,16 +3,19 @@
 function add_bookmark(){
     // turn on listener for document click
     alert("The button was clicked.");
-    document.addEventListener('click', function(event){
-        console.log(event.target);
-        alert("The page was clicked.");
-        var new_bookmark = {'x_coord': event.clientX, 
-            'y_coord': event.clientY};
-        document.getElementById('test').value = new_bookmark.x_coord;
-        console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
-        // sent bookmark to local data
-        localStorage.setItem('new_bookmark', JSON.stringify(new_bookmark));
-    });
+    document.addEventListener('dblclick', save_bookmark);
+}
+
+function save_bookmark(event){
+    console.log(event.target);
+    alert("The page was clicked.");
+    var new_bookmark = {'x_coord': event.clientX, 
+        'y_coord': event.clientY};
+    document.getElementById('test').value = new_bookmark.x_coord;
+    console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
+    // sent bookmark to local data
+    localStorage.setItem('new_bookmark', JSON.stringify(new_bookmark));
+    document.removeEventListener('dblclick', save_bookmark);
 }
 
 // localData =  JSON.parse(localStorage.getItem('title'));
