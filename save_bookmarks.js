@@ -21,5 +21,10 @@ function save_bookmark(event){
     document.removeEventListener('dblclick', save_bookmark);
 }
 
+function SubmitClick(){
+    alert('it works!');
+    localStorage.setItem('new_bookmark', 'example');
+    console.log(localStorage);
+}
 // localData =  JSON.parse(localStorage.getItem('title'));
 //document.getElementById('add-button').addEventListener('click', add_bookmark);
