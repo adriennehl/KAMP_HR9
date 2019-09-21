@@ -16,6 +16,7 @@ function save_bookmark(event){
     var dt = new Date();
     document.getElementById("date").value = dt.toLocaleDateString();
     document.getElementById("time").value = dt.toLocaleTimeString();
+    document.getElementById("x-position").value = new_bookmark.x_coord;
     document.getElementById("y-position").value = new_bookmark.y_coord;
     // sent bookmark to local data
     // localStorage.setItem('new_bookmark', JSON.stringify(new_bookmark));
