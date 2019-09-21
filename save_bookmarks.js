@@ -11,7 +11,7 @@ function save_bookmark(event){
     alert("The page was clicked.");
     var new_bookmark = {'x_coord': event.clientX, 
         'y_coord': event.clientY};
-    document.getElementById('test').value = new_bookmark.x_coord;
+    document.getElementById('keywords').value = new_bookmark.x_coord;
     console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
     var dt = new Date();
     document.getElementById("date").value = dt.toLocaleDateString();
@@ -24,7 +24,12 @@ function save_bookmark(event){
 
 function SubmitClick(){
     alert('it works!');
-    localStorage.setItem('new_bookmark', 'example');
+    url = document.getElementById("url").value;
+    title = document.getElementById("title").value;
+    keywords = document.getElementById("keywords").value;
+    notes = document.getElementById("notes").value;
+    var submission = {'url': url, 'title': title, 'keywords': keywords, 'notes': notes};
+    localStorage.setItem(title, JSON.stringify(submission));
     console.log(localStorage);
 }
 // localData =  JSON.parse(localStorage.getItem('title'));
