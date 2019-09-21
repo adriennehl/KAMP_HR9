@@ -1,11 +1,10 @@
 window.onload = function(){
-        document.getElementById('url').value =  location.href;
+    chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}, 
+    function(tabs){
+        document.getElementById('url').value = tabs[0].url;
+        document.getElementById('title').value = tabs[0].title;
+    })
+                
 }
 
-chrome.tabs.getSelected(null, function(tab) {
-    var tab = tab.id;
-    tabUrl = tab.url;
-    
-    
-    alert(tab.url);
-});
+
