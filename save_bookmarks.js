@@ -1,20 +1,19 @@
-// creates a folder with the title Where am I? bookshelf
-// parentId specifies properties of the new folder
-// function(newFolder) defines function to be executed after the folder is created
-chrome.bookmarks.create({'parentId': bookmarkBar.id,
-                               'title': 'Where am I? bookshelf'});
-
-// callback function for add-button Listener 
+// callback function for add-button Listener, Place your bookmarker 
 // need to find a way to get title and x and y coordinates
-function add_bookmark(){
-    // ask for user to input title of new bookmark
+function add_bookmark(event){
+    // turn on listener for paragraph click
+    $("p").click(function(){
+        alert("The paragraph was clicked.");
+        // $(this).slideUp();
+        // create a new bookmark object
+        var new_bookmark = {'title': title, 'x_coord': event.clientX, 
+            'y_coord': event.clientY};
+        console.log("x_coord: " + x_coord + " y_coord: " + y_coord);
+        // sent bookmark to local data
+        localStorage.setItem(title, JSON.stringify(new_bookmark));
 
-    // get x and y coordinates
+    });
 
-    var new_bookmark = {'title': title, 'x_coord': x_coord, 
-                        'y_coord': y_coord};
-
-    localStorage.setItem(title, JSON.stringify(new_bookmark));
     // localData =  JSON.parse(localStorage.getItem('title'));
 }
 var addButton = document.getElementById("add-button")
