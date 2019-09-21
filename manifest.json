@@ -1,1 +1,6 @@
-Test
+{
+    "name": "Where was I",
+    "version": "1.0",
+    "description": "An Extension that keeps track of where you are on a page. Never lose your place again!",
+    "manifest_version": 2
+}
