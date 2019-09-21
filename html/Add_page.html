@@ -19,11 +19,17 @@
         
     </head>
     <body>
+        <script type = "text/javascript"> function SubmitClick(){
+            $('#submit').click(function(event){alert('it works!'); });}
+            localStorage.setItem('new_bookmark', 'example');
+            console.log(localStorage);
+        </script>
         <div style="position:absolute; top:2.5%; left:5%; width: 90%; height: 95%;background-color: rgb(255, 244, 227);">
+            <!--<form action = "./localStorage.setItem('new_bookmark': {name: value}, JSON.stringify(new_bookmark))"> -->
             <input type="hidden" id="date" name="date">
             <input type="hidden" id="time" name="time">
             <input type="hidden" id="y-position" name="y-position">
-            <table width="75%" align="center">
+            <table width="75%" align="center">  
                 <tr>
                     <td colspan="3"><font color="blue" size="3">Add New Scrollmarker</font></td>
                 </tr>
@@ -53,6 +59,7 @@
                     <td><input type="submit" value="Add" id="submit"/></td>
                 </tr>
             </table>
+            <!--</form>-->
     </div>
             
     
