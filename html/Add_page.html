@@ -10,8 +10,12 @@
             body {height: 100%;
                 background-color:blanchedalmond;
             }
-                    
+            .form_text{width: 250px;
+
+            }        
         </style>
+        <script src="../get_info.js"></script>
+        
     </head>
     <body>
         <div style="position:absolute; top:2.5%; left:5%; width: 90%; height: 95%;background-color: rgb(255, 244, 227);">
@@ -22,20 +26,22 @@
                 </tr>
                 <tr>
                     <td>URL:</td>
-                    <td colspan="2"><input type="url" name="URL" style="width:100%;" placeholder="Enter URL here"/ ></td>
+                    <td colspan="2"><input type="url" id="url" name="URL" class="form.text" placeholder="Enter URL here"/ 
+                        value="default value"
+                    ></td>
                 </tr>
                 <tr>
                     <td>Name:</td>
-                    <td colspan="2"><input type="text" name="name" style="width:100%;" placeholder="Enter name here"/></td>
+                    <td colspan="2"><input type="text" name="name" class="form.text" placeholder="Enter name here"/></td>
                 </tr>
                 <tr>
                     <td>Key Words:</td>
-                    <td colspan="2"><input type="text" name="key" style="width:100%;" placeholder="Enter key words here"/></td>
+                    <td colspan="2"><input type="text" name="key" class="form.text" placeholder="Enter key words here"/></td>
                 </tr>
                 <tr>
                     <td>Notes:</td>
                     <td colspan="2">
-                        <textarea name="notes" cols="30" rows="10" placeholder="Enter notes here"></textarea>
+                        <textarea name="notes" cols="20" rows="10" placeholder="Enter notes here"></textarea>
                     </td>
                 </tr>
                    
