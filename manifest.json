@@ -5,7 +5,7 @@
     "version": "1",
     "browser_action": {
         "default_title": "Where was I?",
-        "default_popup":"popup.html,Add_page.html,Tabs.html,View_page.html", 
+        "default_popup":"Add_page.html,Tabs.html,View_page.html,popup.html", 
         "default_icon": "icon.png"
     },
     "permissions": ["activeTab", "bookmarks"]
