@@ -1,9 +1,8 @@
-alert("Hi.");
 // callback function for add-button Listener, Place your bookmarker 
 // need to find a way to get title and x and y coordinates
 function add_bookmark(){
-    alert("button clicked!");
     // turn on listener for document click
+    alert("The button was clicked.");
     document.addEventListener('click', function(event){
         console.log(event.target);
         alert("The page was clicked.");
@@ -16,4 +15,4 @@ function add_bookmark(){
 }
 
 // localData =  JSON.parse(localStorage.getItem('title'));
-document.getElementsByName("add-button")[0].addEventListener('click', add_bookmark);
+// document.getElementById('add-button').addEventListener('click', add_bookmark);
