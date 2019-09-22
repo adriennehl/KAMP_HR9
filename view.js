@@ -63,13 +63,24 @@ $(function(){
             + keywords + '</td></tr><tr><td colspan="2" height = "60">' + notes + '</td></tr></table>');
             
 
-            $('<button type="button")>GO</button>').attr("value",[xpos,ypos,url]).attr("name", timestring).on('click',function(){
+            $('<button type="button")>GO</button>').attr("value",[xpos,ypos,url]).on('click',function(){
                 
                 
                 var coords = $(this).val().split(",");
                 //alert(typeof coords[1])
                 var bgPage = chrome.extension.getBackgroundPage();
                 bgPage.gotoURL(parseFloat(coords[0]), parseFloat(coords[1]), coords[2]);
+                
+                //var fired_button = $(this).val().split(",");
+                //alert(fired_button[1]);
+                       
+            }).appendTo(newElement);
+
+            $('<button type="button")>SCROLL</button>').attr("value",[xpos,ypos,url]).on('click',function(){
+                var coords = $(this).val().split(",");
+                //alert(typeof coords[1])
+                var bgPage = chrome.extension.getBackgroundPage();
+                bgPage.gotoURL2(parseFloat(coords[0]), parseFloat(coords[1]), coords[2]);
                 
                 //var fired_button = $(this).val().split(",");
                 //alert(fired_button[1]);

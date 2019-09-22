@@ -15,11 +15,19 @@ chrome.runtime.onMessage.addListener(
     });
 
 function gotoURL(xpos, ypos, url){
-    chrome.tabs.executeScript({file: 'main2.js'});
-    alert(" test10 pass info to content script");
+    chrome.tabs.executeScript({file: 'main3.js'});
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, JSON.stringify({"x_coord": xpos, "y_coord": ypos, "url": url}), function(response) {
         console.log(response.farewell);
+    });
+  });
+}
+
+function gotoURL2(xpos, ypos, url){
+  chrome.tabs.executeScript({file: 'main2.js'});
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, JSON.stringify({"x_coord": xpos, "y_coord": ypos, "url": url}), function(response) {
+      console.log(response.farewell);
     });
   });
 }
