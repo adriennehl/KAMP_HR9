@@ -56,25 +56,30 @@ $(function(){
             timestring = data_f[i][3][0][0]
             keywords = data_f[i][3][0][1]
             notes = data_f[i][3][0][2]
-            ypos =  data_f[i][3][0][4]       
+            xpos = data_f[i][3][0][3] 
+            ypos = data_f[i][3][0][4]      
             
             $(newElement).append('<table width="95%" border="1"><tr><td width="15%">' + (j+1) + '</td><td>' 
             + keywords + '</td></tr><tr><td colspan="2" height = "60">' + notes + '</td></tr></table>');
             
 
-            $('<button type="button" name=timestring+"GO" value=ypos>GO</button>').on('click',function(){
-                window.alert(ypos)}).appendTo(newElement)
+            $('<button type="button")>GO</button>').attr("value",[xpos,ypos]; "name", timestring).on('click',function(){
+                //var byPage = chrome.extension.getBackgroundPage();
+                //byPage.gotoURL($(this).val()[0],$(this).val()[1],$(this).name())
+                
+                var fired_button = $(this).val();
+                alert(fired_button[0]);
+                       
+            }).appendTo(newElement);
 
-            $('<button type="button" name=timestring+"DELETE" value=timestring>DELETE</button>').on('click',function(){
-                window.alert(timestring)}).appendTo(newElement)
-            
-            
-
-
-            
+            $('<button type="button" name=timestring+"DELETE">DELETE</button>').attr("value",timestring).on('click',function(){
+                localStorage.removeItem($(this).val());
+                document.location.reload();
+                        
+            }).appendTo(newElement);
+                       
         };
     };
-
 
 
 });
