@@ -1,19 +1,6 @@
 //文档加载完成事件
 $(function(){
     //绑定点击事件
-    $("#btn1").click(function(){
-        $("#div1").after("<font color='red' size='7'>Test</font>");
-    this.$OuterDiv = $(document.createElement("div"))
-        .hide()
-        .append($('<table></table>')
-            .attr({ cellSpacing : 0 })
-            .addClass("text")
-        )
-    ;
-    });
-});
-
-function analyze_local_storage(){
     var data = [];
     for (var i = 0; i < localStorage.length; i++){
         bm = [];
@@ -39,7 +26,6 @@ function analyze_local_storage(){
         data_f.push([unique_WP[i],[],[]]);
     }
 
-
     for (var i = 0; i < data.length; i++){
         for (var j = 0; j < data_f.length; j++){
             if(JSON.parse(data[i][0]).url === data_f[j][0]){
@@ -53,9 +39,8 @@ function analyze_local_storage(){
             }
         }
     }
-    return data_f
-}
-
+    document.getElementById("demo").innerHTML = data_f;
+});
 
 
 
