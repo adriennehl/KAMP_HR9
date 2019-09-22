@@ -64,10 +64,12 @@ $(function(){
             
 
             $('<button type="button")>GO</button>').attr("value",[xpos,ypos,url]).attr("name", timestring).on('click',function(){
+                
+                
                 var coords = $(this).val().split(",");
                 //alert(typeof coords[1])
                 var bgPage = chrome.extension.getBackgroundPage();
-                bgPage.gotoURL(parseFloat(coords[0]), parseFloat(coords[1]), parseFloat(coords[2]));
+                bgPage.gotoURL(parseFloat(coords[0]), parseFloat(coords[1]), coords[2]);
                 
                 //var fired_button = $(this).val().split(",");
                 //alert(fired_button[1]);
