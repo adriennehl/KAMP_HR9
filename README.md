@@ -11,3 +11,5 @@ The user clicks on the owl icon on a page they want to add a bookmark on, scroll
 
 ### To View or Delete a Bookmark (View Scrollmarker tab)
 The user can toggle to the View Scrollmarker tab to see their list of bookmarks. From there, they can choose to delete a bookmark or go to a page they saved. Pressing "Go" will take the user to the correct webpage, and they can press "Scroll" to return to the place they left off at. Bookmarks that are on the same page are grouped together in the View Scrollmarker tab.
+
+!(icon.png)
