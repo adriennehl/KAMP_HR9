@@ -12,12 +12,15 @@ $(function(){
         title = document.getElementById("title").value;
         keywords = document.getElementById("keywords").value;
         notes = document.getElementById("notes").value;
-        var submission = {'url': url, 'title': title, 'keywords': keywords, 'notes': notes};
-        localStorage.setItem(title, JSON.stringify(submission));
+        xpos = document.getElementById("x-position").value;
+        ypos = document.getElementById("y-position").value;
+        time = document.getElementById("date").value;
+        var submission = {'url': url, 'title': title, 'keywords': keywords, 'notes': notes, "xpos": xpos,
+        "ypos": ypos, "time":time};
+        localStorage.setItem(time, JSON.stringify(submission));
         console.log(localStorage);
     });
 });
-
 
 
 function save_bookmark(event){
@@ -25,11 +28,9 @@ function save_bookmark(event){
     alert("The page was clicked.");
     var new_bookmark = {'x_coord': event.clientX, 
         'y_coord': event.clientY};
-    document.getElementById('keywords').value = new_bookmark.x_coord;
     console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
     var dt = new Date();
-    document.getElementById("date").value = dt.toLocaleDateString();
-    document.getElementById("time").value = dt.toLocaleTimeString();
+    document.getElementById("date").value = dt.toISOString();
     document.getElementById("x-position").value = new_bookmark.x_coord;
     document.getElementById("y-position").value = new_bookmark.y_coord;
     // sent bookmark to local data
