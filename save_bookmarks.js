@@ -16,7 +16,7 @@ $(function(){
         ypos = document.getElementById("y-position").value;
         time = document.getElementById("date").value;
         var submission = {'url': url, 'title': title, 'keywords': keywords, 'notes': notes, "xpos": xpos,
-        "ypos": ypos, "time":time};
+        "ypos": ypos};
         localStorage.setItem(time, JSON.stringify(submission));
         console.log(localStorage);
     });
@@ -33,11 +33,6 @@ function save_bookmark(event){
     document.getElementById("date").value = dt.toISOString();
     document.getElementById("x-position").value = new_bookmark.x_coord;
     document.getElementById("y-position").value = new_bookmark.y_coord;
-    // sent bookmark to local data
-    // localStorage.setItem('new_bookmark', JSON.stringify(new_bookmark));
     document.removeEventListener('dblclick', save_bookmark);
 }
-
-
-// localData =  JSON.parse(localStorage.getItem('title'));
 

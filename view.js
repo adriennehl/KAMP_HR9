@@ -13,6 +13,25 @@ $(function(){
     });
 });
 
+function analyze_local_storage(){
+    var data = [];
+    for (var i = 0; i < localStorage.length; i++){
+        bm = [];
+        cach = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        for (var j = 0; j < cach.length; j++)
+            bm.push(cach.getItem(cach.key(j)));
+        bm.push(localStorage.key(i));
+        //bm: [url, title, keywords, notes, xpos, ypos, time_string]
+        data.push(bm)
+    }
+    window.alert("Hi")
+}
+
+
+
+
+
+
 createEl = function(t, a, y, x)//编写建立一个新对象的通用方法
     { 
         var e = document.createElement(t);
@@ -30,7 +49,7 @@ createEl = function(t, a, y, x)//编写建立一个新对象的通用方法
     }
 
 //再通过以下方法来进行调用建立一个新层
-function Button2_onclick() //先把建立一个新的DIV的方法写成一个通用方法，然后通过调用方法实例化建立DIV
+function Button_onclick() //先把建立一个新的DIV的方法写成一个通用方法，然后通过调用方法实例化建立DIV
 {var newElement = createEl('div', 
     {'class': 'newDivClass', id: 'newDiv', name: 'newDivName'},
     {width: '300px', height:'200px', margin:'0 auto', border:'1px solid #DDD'}, 
