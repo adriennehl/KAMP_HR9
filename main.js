@@ -14,18 +14,6 @@ function save_bookmark(x_co, y_co){
 
 save_bookmark(x_coord, y_coord);
 
-chrome.runtime.onMessage.addListener(
-  function(request) {
-  alert("message recieved");
-  var info = JSON.parse(request);
-  x_coord = info.x_coord;
-  y_coord = info.y_coord;
-  url = info.url;
-  window.location.assign(url);
-  window.scrollTo(x_coord, y_coord);
-  });
-
-
 // main.js
 /***
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
