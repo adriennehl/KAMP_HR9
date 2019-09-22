@@ -49,9 +49,33 @@ $(function(){
         //window.alert(title);
         var newElement = createEl('div', 
         {'class': 'WP', id: url, name: title},
-        {width: '98%', height:'100px', margin:'3px', border:'1px solid #DDD'}, 
+        {width: '98%', margin:'3px', border:'1px solid #DDD'}, 
         title);
+
+        for (var j = 0; j < data_f[i][3].length; j++){
+            timestring = data_f[i][3][0][0]
+            keywords = data_f[i][3][0][1]
+            notes = data_f[i][3][0][2]
+            ypos =  data_f[i][3][0][4]       
+            
+            $(newElement).append('<table width="95%" border="1"><tr><td width="15%">' + (j+1) + '</td><td>' 
+            + keywords + '</td></tr><tr><td colspan="2" height = "60">' + notes + '</td></tr></table>');
+            
+
+            $(newElement).append('<button type="button" value=ypos>GO</button>').on('click',function(){
+                window.alert(ypos)
+            });
+
+            $(newElement).append('<input type="button" value="DELETE" />').on('click',function(){
+                window.alert(timestring)
+            });
+            
+
+
+            
+        };
     };
+
 
 
 });
