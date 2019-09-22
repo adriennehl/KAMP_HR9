@@ -12,6 +12,8 @@ $(function(){
 
     $("#submit").click(function(){
         alert('submit the bookmark!');
+        var dt = new Date();
+        document.getElementById("date").value = dt.toISOString();
         url = document.getElementById("url").value;
         title = document.getElementById("title").value;
         keywords = document.getElementById("keywords").value;
@@ -36,8 +38,6 @@ function save_bookmark(x_coord, y_coord){
     var new_bookmark = {'x_coord': x_coord, 
         'y_coord': y_coord};
     console.log("x_coord: " + new_bookmark.x_coord + " y_coord: " + new_bookmark.y_coord);
-    var dt = new Date();
-    document.getElementById("date").value = dt.toISOString();
     document.getElementById("x-position").value = new_bookmark.x_coord;
     document.getElementById("y-position").value = new_bookmark.y_coord;
     // document.removeEventListener('dblclick', save_bookmark);
