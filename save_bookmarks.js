@@ -22,7 +22,6 @@ $(function(){
         time = document.getElementById("date").value;
         var submission = JSON.stringify({'url': url, 'title': title, 'keywords': keywords, 'notes': notes, "xpos": xpos,
         "ypos": ypos});
-        alert(submission);
         localStorage.setItem(time, submission);
     });
 });
