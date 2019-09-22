@@ -10,9 +10,12 @@
             body {height: 100%;
                 background-color:blanchedalmond;
             }
-            .form_text{width: 100%;
+            .form_text{size="55";
 
-            }        
+            } 
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                font-family: Arial, Helvetica, sans-serif;
+            }       
         </style>
         <script type="text/javascript" src="../jquery-1.11.0.min.js"></script>
         <script src="../get_info.js"></script>
@@ -26,34 +29,34 @@
             <input type="hidden" id="time" name="time">
             <input type="hidden" id="x-position" name="x-position">
             <input type="hidden" id="y-position" name="y-position">
-            <table width="90%" align="center">
+            <table width="90%" align="center" style="margin: auto">
                 <tr height = "50px">
                     <td colspan="3"><font size="5">Add New Scrollmarker</font></td>
                 </tr>
                 <tr>
                     <td width="90px">URL:</td>
                     <td colspan="2">
-                        <input type="url" id="url" name="URL" class="form.text" placeholder="Enter URL here"
+                        <input type="url" id="url" name="URL" size="28" placeholder="Enter URL here"
                     /></td>
                 </tr>
                 <tr>
-                    <td width="90px">Title:</td>
-                    <td colspan="2"><input type="text" id="title" name="name" class="form.text" placeholder="Enter name here"/></td>
+                    <td width="90px">Page Title:</td>
+                    <td colspan="2"><input type="text" id="title" name="name" size="28" class="form.text" placeholder="Enter name here"/></td>
                 </tr>
                 <tr>
                     <td width="90px">Key Words:</td>
-                    <td colspan="2"><input type="text" id="keywords" name="key" class="form.text" placeholder="Enter key words here"/></td>
+                    <td colspan="2"><input type="text" id="keywords" name="key" size="28" class="form.text" placeholder="Enter key words for bookmark"/></td>
                 </tr>
                 <tr>
                     <td width="90px">Notes:</td>
                     <td colspan="2">
-                        <textarea name="notes" id = "notes" cols="20" rows="10" placeholder="Enter notes here"></textarea>
+                        <textarea name="notes" id = "notes" cols="29" rows="10" placeholder="Enter notes here"></textarea>
                     </td>
                 </tr>
                    
                 <tr>
-                    <td colspan="2" width="250px"><input type="button" value="Place Bookmark" id="add-button"/></td>
-                    <td><input type="submit" value="Add" id="submit"/></td>
+                    <td colspan="2" style="text-align: center;"><input type="button" value="Place Bookmark" id="add-button"/></td>
+                    <td style="text-align: center;" width = 50%><input type="submit" value="Add Bookmark" width = 70px id="submit"/></td>
                 </tr>
             </table>
             <!--</form>-->
