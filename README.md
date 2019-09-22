@@ -16,3 +16,5 @@ The user can toggle to the View Scrollmarker tab to see their list of bookmarks.
 ![Owl Icon](icon.png)
 
 Happy Reading!
+
+*Disclaimer: We are a group of freshman with very limited coding experiences, so we kindly ask that you be a little patient with our extension. It might take a few tries/clicks/seconds to load. We will do better in the future. 
