@@ -62,13 +62,12 @@ $(function(){
             + keywords + '</td></tr><tr><td colspan="2" height = "60">' + notes + '</td></tr></table>');
             
 
-            $(newElement).append('<button type="button" value=ypos>GO</button>').on('click',function(){
-                window.alert(ypos)
-            });
+            $('<button type="button" name=timestring+"GO" value=ypos>GO</button>').on('click',function(){
+                window.alert(ypos)}).appendTo(newElement)
 
-            $(newElement).append('<input type="button" value="DELETE" />').on('click',function(){
-                window.alert(timestring)
-            });
+            $('<button type="button" name=timestring+"DELETE" value=timestring>DELETE</button>').on('click',function(){
+                window.alert(timestring)}).appendTo(newElement)
+            
             
 
 
