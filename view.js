@@ -17,16 +17,44 @@ function analyze_local_storage(){
     var data = [];
     for (var i = 0; i < localStorage.length; i++){
         bm = [];
-        cach = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        for (var j = 0; j < cach.length; j++)
-            bm.push(cach.getItem(cach.key(j)));
+        cach = localStorage.getItem(localStorage.key(i));
+        bm.push(cach);
         bm.push(localStorage.key(i));
         //bm: [url, title, keywords, notes, xpos, ypos, time_string]
-        data.push(bm)
+        data.push(bm);
     }
-    window.alert("Hi")
-}
+    //window.alert(data[0]);
+    var arr_data = []
+    for (var i = 0; i < data.length; i++){
+        arr_data.push(JSON.parse(data[i][0]).url);
+    }
+    //document.getElementById("demo").innerHTML = arr_data;
+    var unique_WP = [];
+    $.each(arr_data, function(i, el){
+    if($.inArray(el, unique_WP) === -1) unique_WP.push(el);
+    });
 
+    var data_f = []
+    for (var i = 0; i < unique_WP.length; i++){
+        data_f.push([unique_WP[i],[],[]]);
+    }
+
+
+    for (var i = 0; i < data.length; i++){
+        for (var j = 0; j < data_f.length; j++){
+            if(JSON.parse(data[i][0]).url === data_f[j][0]){
+                data_f[j][1] = JSON.parse(data[i][0]).title;
+                data_f[j][2].push([data[i][1],
+                    JSON.parse(data[i][0]).keywords,
+                    JSON.parse(data[i][0]).notes, 
+                    JSON.parse(data[i][0]).xpos,
+                    JSON.parse(data[i][0]).ypos]);
+                break
+            }
+        }
+    }
+    return data_f
+}
 
 
 
