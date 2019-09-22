@@ -10,7 +10,6 @@ function runContentScript(){
 chrome.runtime.onMessage.addListener(
     function(request) {
     var coords = JSON.parse(request);
-    alert(coords.y_coord);
     coords1 = coords.x_coord;
     coords2 = coords.y_coord;
     });

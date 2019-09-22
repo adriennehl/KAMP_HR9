@@ -2,7 +2,7 @@
 // need to find a way to get title and x and y coordinates
 $(function(){
     $("#add-button").click(function(){
-        alert("The place your bookmarker button was clicked.");
+        alert("The bookmark will be placed at current window configurations.");
         var bgPage = chrome.extension.getBackgroundPage();
         bgPage.runContentScript();
     });

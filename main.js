@@ -1,7 +1,7 @@
 x_coord = window.pageXOffset;
 y_coord = window.pageYOffset;
 // display x and y coord to screen 
-alert("cs: x_coord: " + x_coord + " y_coord: " + y_coord);
+// alert("cs: x_coord: " + x_coord + " y_coord: " + y_coord);
 
 // send x_coord and y_coord to save_bookmarks
 function save_bookmark(x_co, y_co){
