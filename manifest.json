@@ -2,10 +2,6 @@
     "manifest_version":2,
     "name": "Bookmark Extension",
     "description": "An extension that keeps track of where you are on a page.",
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
     "version": "1",
     "browser_action": {
         "default_title": "Where was I?",
